@@ -19,9 +19,16 @@ void tina::calcu::match(char ch) {
 
 int tina::calcu::expr() {
 	int result = term();
-	while (token == '+') {
-		match('+');
-		result += term();
+	while (token == '+'||token=='-') {
+		if (token == '+') {
+			match('+');
+			result += term();
+		}
+		else if (token == '-') {
+			match('-');
+			result -= term();
+		}
+		
 	}
 	return result;
 }
