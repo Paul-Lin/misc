@@ -1,3 +1,4 @@
-﻿  calc1.cpp
-  simple-bnf.vcxproj -> C:\Users\Paul\misc\simple-bnf\simple-bnf\Debug\simple-bnf.exe
-  simple-bnf.vcxproj -> C:\Users\Paul\misc\simple-bnf\simple-bnf\Debug\simple-bnf.pdb (Full PDB)
+﻿  main.cpp
+  Parser.cpp
+c:\users\paul\misc\simple-bnf\simple-bnf\simple-bnf\parser.cpp(8): error C3493: 无法隐式捕获“lexer”，因为尚未指定默认捕获模式
+  正在生成代码...

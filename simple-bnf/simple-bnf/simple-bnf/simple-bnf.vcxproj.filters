@@ -24,12 +24,36 @@
     <ClCompile Include="calc1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="expr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="operators.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="calc.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="calc1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="expr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="operators.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="elements.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="astree.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
