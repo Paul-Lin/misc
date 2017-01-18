@@ -159,6 +159,7 @@
     <ClInclude Include="calc1.h" />
     <ClInclude Include="elements.h" />
     <ClInclude Include="expr.h" />
+    <ClInclude Include="factory.h" />
     <ClInclude Include="operators.h" />
     <ClInclude Include="Parser.h" />
   </ItemGroup>

@@ -56,5 +56,8 @@
     <ClInclude Include="astree.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="factory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
