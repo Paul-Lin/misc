@@ -12,7 +12,7 @@ namespace tina {
 
 		void match(const char& x);
 
-		virtual Token nextToken()=0;
+		virtual Token* nextToken()=0;
 
 		virtual std::string getTokenName(int tokenType)=0;
 
@@ -21,21 +21,49 @@ namespace tina {
 		size_t p = 0;
 		char c;
 	};
-	class ListLexer : Lexer{
+	class ListLexer : public Lexer{
 	public:
 		ListLexer(std::string& input) :Lexer(input) {}
-		std::string getTokenName(int x);
 		bool isLetter();
-
-		Token nextToken();
+		tina::Token* nextToken();
+		std::string getTokenName(int tokenType);
 
 		static const int NAME = 2;
 		static const int COMMA = 3;
 		static const int LBRACK = 4;
 		static const int RBRACK = 5;
+		static const int EQUALS = 6;
 		static const std::string tokenNames[];
 	};
+	class Parser {
+	public:
+		
+		virtual void match(int x)=0;
+		void consume();
 
+		Lexer* lexer;
+		Token* lookahead[2];
+		int k;
+		int peek = 0;
+	};
+
+	class ListParser:public Parser {
+	public:
+		ListParser(Lexer* input,int k){
+			this->lexer = input;
+			this->k = k;
+			for (int i = 1; i <= k; i++)
+				consume();
+		}
+		void match(int x);
+		void list();
+		void elements();
+		void element();
+
+		Token* LT(int i);
+
+		int LA(int i);
+	};
 }
 #endif // !_LIST_LEXER
 
