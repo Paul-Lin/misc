@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\users\paul\misc\parsing\backtrack\backtrack\parser.h(20): warning C4290: 忽略 C++ 异常规范，但指示函数不是 __declspec(nothrow)
+  BacktrackLexer.cpp
+  正在生成代码...
+  backtrack.vcxproj -> C:\Users\Paul\misc\parsing\backtrack\Debug\backtrack.exe
+  backtrack.vcxproj -> C:\Users\Paul\misc\parsing\backtrack\Debug\backtrack.pdb (Full PDB)
