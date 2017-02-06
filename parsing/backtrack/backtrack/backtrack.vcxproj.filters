@@ -24,6 +24,9 @@
     <ClInclude Include="BacktrackLexer.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="BacktrackParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lexer.cpp">
@@ -36,6 +39,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="BacktrackLexer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BacktrackParser.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -147,11 +147,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BacktrackLexer.h" />
+    <ClInclude Include="BacktrackParser.h" />
     <ClInclude Include="lexer.h" />
     <ClInclude Include="Parser.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BacktrackLexer.cpp" />
+    <ClCompile Include="BacktrackParser.cpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Parser.cpp" />

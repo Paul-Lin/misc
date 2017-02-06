@@ -5,7 +5,7 @@
 namespace t {
 	struct Token {
 		int type;
-		std::string& value;
+		std::string value;
 		Token(int ty,std::string& val):type(ty),value(val){}
 		const std::string& toString();
 	};
@@ -21,15 +21,25 @@ namespace t {
 		static std::string tokenNames[];
 
 		BacktrackLexer(std::string& in) :input(in) {
-
+			ch = input.at(p);
 		}
 
-		void match(int i);
+		bool match(int i);
 
 		void consume();
+
+		Token* nextToken();
+
+		bool isLetter();
+
+		void advance();
+
+		Token* name();
 	private:
-		std::string& input;
-		size_t p;
+		std::string input;
+		Token* token;
+		char ch;
+		size_t p=0;
 	};
 }
 #endif // !_BACKTRACK_LEXER
