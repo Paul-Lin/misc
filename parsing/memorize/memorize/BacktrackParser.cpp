@@ -56,7 +56,7 @@ bool tina::BacktrackParser::list() {
 		isSuccess = false;
 	}
 	if (markers->size() > 0)
-		memorize(list_memo, startTokenIndex, !isSuccess);
+		memorize(listMemo, startTokenIndex, !isSuccess);
 }
 
 
@@ -92,7 +92,7 @@ void tina::BacktrackParser::consume() {
 	if (marker == lookahead->size() && !(markers->size() > 0)) {
 		marker = 0;
 		lookahead->clear();
-
+		listMemo->clear();
 	}
 	sync(1);
 }
