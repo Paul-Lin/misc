@@ -16,7 +16,9 @@ namespace tina {
 
 		void consume();
 
-		void list();
+		bool list();
+
+		bool _list();
 
 		int type(int );
 
@@ -24,17 +26,26 @@ namespace tina {
 
 		int mark();
 
+		bool elements();
+
+		bool element();
+
 		void sync(int );
 
 		void fill(int);
 
 		void release();
+
+		void memorize(std::map<int, int>* memorization, int startTokenIndex, bool failed);
+
+		bool alreadyParsedRule(std::map<int, int>* memorization);
 	private:
 		BacktrackLexer* lexer;
 		size_t marker = 0;
-		
+		static const int FAILED = -1;
 		std::vector<Token*>* lookahead;
 		std::vector<int>* markers;
+		std::map<int, int>* listMemo = new std::map<int, int>();
 	};
 }
 #endif // !_BACKTRACK_PARSER
