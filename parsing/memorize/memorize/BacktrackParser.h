@@ -4,8 +4,12 @@
 #include "BacktrackLexer.h"
 #include <vector>
 #include <map>
-
+#include <exception>
 namespace tina {
+	class PreviousParsedFailedException : public std::exception {
+	public:
+		PreviousParsedFailedException() :exception("ERROR") {}
+	};
 	class BacktrackParser {
 	public:
 		BacktrackParser(BacktrackLexer*);
@@ -20,7 +24,7 @@ namespace tina {
 
 		bool _list();
 
-		int type(int );
+		int type(int);
 
 		Token* token(int);
 
@@ -30,11 +34,17 @@ namespace tina {
 
 		bool element();
 
-		void sync(int );
+		void sync(int);
 
 		void fill(int);
 
 		void release();
+
+		bool assign();
+
+		bool speculate_stat_alt1();
+
+		bool speculate_stat_alt2();
 
 		void memorize(std::map<int, int>* memorization, int startTokenIndex, bool failed);
 
