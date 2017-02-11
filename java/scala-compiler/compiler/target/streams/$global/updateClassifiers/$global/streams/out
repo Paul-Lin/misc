@@ -6,13 +6,29 @@
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.12.1 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@570f5d6f
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3178f3d2
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.12.1
 [debug] 	found org.scala-lang#scala-library;2.12.1 in sbt-chain
 [debug] 	[2.12.1] org.scala-lang#scala-library;2.12.1
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->default(compile)]
+[info] Resolving junit#junit;4.12 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5ed14dd5
+[debug] sbt-chain: module revision found in cache: junit#junit;4.12
+[debug] 	found junit#junit;4.12 in sbt-chain
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->default(compile)]
+[info] Resolving org.hamcrest#hamcrest-core;1.3 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@584fc2a0
+[debug] sbt-chain: module revision found in cache: org.hamcrest#hamcrest-core;1.3
+[debug] 	found org.hamcrest#hamcrest-core;1.3 in sbt-chain
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->master]
 [debug] resolving dependencies for configuration 'runtime'
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [runtime]
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [compile]
@@ -20,10 +36,26 @@
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->master]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->default(compile)]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->master]
 [debug] resolving dependencies for configuration 'test'
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [test]
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [runtime]
@@ -32,14 +64,38 @@
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->master]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->default(compile)]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->master]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test->default(compile)]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test->master]
 [debug] resolving dependencies for configuration 'provided'
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [provided]
 [debug] resolving dependencies for configuration 'optional'
@@ -51,12 +107,28 @@
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->master]
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [optional]
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [provided]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile-internal->default(compile)]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile-internal->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile-internal->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile-internal->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile-internal->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile-internal->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile-internal->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile-internal->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile-internal->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile-internal->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile-internal->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile-internal->master]
 [debug] resolving dependencies for configuration 'runtime-internal'
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [runtime-internal]
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [runtime]
@@ -65,15 +137,39 @@
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->master]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->default(compile)]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->master]
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [optional]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime-internal->default(compile)]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime-internal->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime-internal->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime-internal->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime-internal->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime-internal->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime-internal->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime-internal->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime-internal->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime-internal->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime-internal->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime-internal->master]
 [debug] resolving dependencies for configuration 'test-internal'
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [test-internal]
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [test]
@@ -83,20 +179,52 @@
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [compile->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [compile->master]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->default(compile)]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [runtime->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [runtime->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [runtime->master]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test->default(compile)]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test->master]
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [optional]
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [provided]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test-internal->default(compile)]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test-internal->runtime]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test-internal->compile]
 [debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.scala-lang#scala-library;2.12.1 [test-internal->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test-internal->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test-internal->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test-internal->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->junit#junit;4.12 [test-internal->master]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test-internal->default(compile)]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test-internal->runtime]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test-internal->compile]
+[debug] == resolving dependencies default#compiler$sources_2.12;1.0->org.hamcrest#hamcrest-core;1.3 [test-internal->master]
 [debug] resolving dependencies for configuration 'plugin'
 [debug] == resolving dependencies for default#compiler$sources_2.12;1.0 [plugin]
 [debug] resolving dependencies for configuration 'sources'
@@ -147,42 +275,28 @@
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.1!scala-library.jar
-[debug] 		tried /home/lin/.ivy2/local/org.scala-lang/scala-library/2.12.1/srcs/scala-library-sources.jar
-[debug] 		tried https://jcenter.bintray.com/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1-sources.jar
-[info] downloading https://jcenter.bintray.com/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1-sources.jar ...
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1-sources.jar
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1-sources.jar.sha1
-[debug] sha1 OK for https://jcenter.bintray.com/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1-sources.jar
-[info] 	[SUCCESSFUL ] org.scala-lang#scala-library;2.12.1!scala-library.jar(src) (19554ms)
-[debug] 		tried /home/lin/.ivy2/local/org.scala-lang/scala-compiler/2.12.1/srcs/scala-compiler-sources.jar
-[debug] 		tried https://jcenter.bintray.com/org/scala-lang/scala-compiler/2.12.1/scala-compiler-2.12.1-sources.jar
-[info] downloading https://jcenter.bintray.com/org/scala-lang/scala-compiler/2.12.1/scala-compiler-2.12.1-sources.jar ...
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/scala-lang/scala-compiler/2.12.1/scala-compiler-2.12.1-sources.jar
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/scala-lang/scala-compiler/2.12.1/scala-compiler-2.12.1-sources.jar.sha1
-[debug] sha1 OK for https://jcenter.bintray.com/org/scala-lang/scala-compiler/2.12.1/scala-compiler-2.12.1-sources.jar
-[info] 	[SUCCESSFUL ] org.scala-lang#scala-compiler;2.12.1!scala-compiler.jar(src) (41066ms)
-[debug] 		tried /home/lin/.ivy2/local/org.scala-lang/scala-reflect/2.12.1/srcs/scala-reflect-sources.jar
-[debug] 		tried https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.12.1/scala-reflect-2.12.1-sources.jar
-[info] downloading https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.12.1/scala-reflect-2.12.1-sources.jar ...
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.12.1/scala-reflect-2.12.1-sources.jar
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.12.1/scala-reflect-2.12.1-sources.jar.sha1
-[debug] sha1 OK for https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.12.1/scala-reflect-2.12.1-sources.jar
-[info] 	[SUCCESSFUL ] org.scala-lang#scala-reflect;2.12.1!scala-reflect.jar(src) (8123ms)
-[debug] 		tried /home/lin/.ivy2/local/org.scala-lang.modules/scala-xml_2.12/1.0.6/srcs/scala-xml_2.12-sources.jar
-[debug] 		tried https://jcenter.bintray.com/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6-sources.jar
-[info] downloading https://jcenter.bintray.com/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6-sources.jar ...
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6-sources.jar
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6-sources.jar.sha1
-[debug] sha1 OK for https://jcenter.bintray.com/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6-sources.jar
-[info] 	[SUCCESSFUL ] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src) (10434ms)
-[debug] 		tried /home/lin/.ivy2/local/jline/jline/2.14.1/srcs/jline-sources.jar
-[debug] 		tried https://jcenter.bintray.com/jline/jline/2.14.1/jline-2.14.1-sources.jar
-[info] downloading https://jcenter.bintray.com/jline/jline/2.14.1/jline-2.14.1-sources.jar ...
-[debug] 	jcenter: downloading https://jcenter.bintray.com/jline/jline/2.14.1/jline-2.14.1-sources.jar
-[debug] 	jcenter: downloading https://jcenter.bintray.com/jline/jline/2.14.1/jline-2.14.1-sources.jar.sha1
-[debug] sha1 OK for https://jcenter.bintray.com/jline/jline/2.14.1/jline-2.14.1-sources.jar
-[info] 	[SUCCESSFUL ] jline#jline;2.14.1!jline.jar(src) (7352ms)
-[debug] :: resolution report :: resolve 52ms :: artifacts dl 86539ms
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.1!scala-library.jar(src)
+[debug] 		tried /home/lin/.ivy2/local/junit/junit/4.12/srcs/junit-sources.jar
+[debug] 	[NOT REQUIRED] junit#junit;4.12!junit.jar
+[debug] 		tried https://jcenter.bintray.com/junit/junit/4.12/junit-4.12-sources.jar
+[info] downloading https://jcenter.bintray.com/junit/junit/4.12/junit-4.12-sources.jar ...
+[debug] 	jcenter: downloading https://jcenter.bintray.com/junit/junit/4.12/junit-4.12-sources.jar
+[debug] 	jcenter: downloading https://jcenter.bintray.com/junit/junit/4.12/junit-4.12-sources.jar.sha1
+[debug] sha1 OK for https://jcenter.bintray.com/junit/junit/4.12/junit-4.12-sources.jar
+[info] 	[SUCCESSFUL ] junit#junit;4.12!junit.jar(src) (5588ms)
+[debug] 		tried /home/lin/.ivy2/local/org.hamcrest/hamcrest-core/1.3/srcs/hamcrest-core-sources.jar
+[debug] 	[NOT REQUIRED] org.hamcrest#hamcrest-core;1.3!hamcrest-core.jar
+[debug] 		tried https://jcenter.bintray.com/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar
+[info] downloading https://jcenter.bintray.com/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar ...
+[debug] 	jcenter: downloading https://jcenter.bintray.com/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar
+[debug] 	jcenter: downloading https://jcenter.bintray.com/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar.sha1
+[debug] sha1 OK for https://jcenter.bintray.com/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar
+[info] 	[SUCCESSFUL ] org.hamcrest#hamcrest-core;1.3!hamcrest-core.jar(src) (2281ms)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.1!scala-compiler.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.1!scala-reflect.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
+[debug] 	[NOT REQUIRED] jline#jline;2.14.1!jline.jar(src)
+[debug] :: resolution report :: resolve 188ms :: artifacts dl 7937ms
 [debug] 	report for default#compiler$sources_2.12;1.0 compile produced in /home/lin/IdeaProjects/scala-compiler/compiler/target/resolution-cache/reports/default-compiler$sources_2.12-compile.xml
 [debug] 	report for default#compiler$sources_2.12;1.0 runtime produced in /home/lin/IdeaProjects/scala-compiler/compiler/target/resolution-cache/reports/default-compiler$sources_2.12-runtime.xml
 [debug] 	report for default#compiler$sources_2.12;1.0 test produced in /home/lin/IdeaProjects/scala-compiler/compiler/target/resolution-cache/reports/default-compiler$sources_2.12-test.xml
@@ -196,4 +310,4 @@
 [debug] 	report for default#compiler$sources_2.12;1.0 docs produced in /home/lin/IdeaProjects/scala-compiler/compiler/target/resolution-cache/reports/default-compiler$sources_2.12-docs.xml
 [debug] 	report for default#compiler$sources_2.12;1.0 pom produced in /home/lin/IdeaProjects/scala-compiler/compiler/target/resolution-cache/reports/default-compiler$sources_2.12-pom.xml
 [debug] 	report for default#compiler$sources_2.12;1.0 scala-tool produced in /home/lin/IdeaProjects/scala-compiler/compiler/target/resolution-cache/reports/default-compiler$sources_2.12-scala-tool.xml
-[debug] 	resolve done (52ms resolve - 86539ms download)
+[debug] 	resolve done (188ms resolve - 7937ms download)

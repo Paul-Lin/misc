@@ -20,6 +20,16 @@ public class BacktrackParser {
         sync(1);
     }
 
+    public void stat(){
+        if(speculate_stat_alt_1()){
+            list();
+            match(BacktrackLexer.EOF_TYPE);
+        }else if(speculate_stat_alt_2()){
+            System.out.println("predict alternative 2");
+            assign();
+            match(BacktrackLexer.EOF_TYPE);
+        }
+    }
     public void sync(int i){
         if(mark+i-1>(lookahead.size()-1)){
             int n=(mark+i-1)-(lookahead.size()-1);
@@ -49,7 +59,7 @@ public class BacktrackParser {
 
     public void consume(){
         mark++;
-        if(mark==lookahead.size()&&markers.size()>0){
+        if(mark==lookahead.size()&&!(markers.size()>0)){
             mark=0;
             lookahead.clear();
             listMemo.clear();
@@ -61,7 +71,7 @@ public class BacktrackParser {
     }
 
     public void release(){
-        mark=markers.get(mark);
+        mark=markers.get(markers.size()-1);
         markers.clear();
     }
 
@@ -81,7 +91,52 @@ public class BacktrackParser {
         memorization.put(startTokenIndex,stopTokenIndex);
     }
 
+    public boolean speculate_stat_alt_1(){
+        System.out.println("attempt alternative 1");
+        boolean success=true;
+        mark();
+        try{
+            list();
+            match(BacktrackLexer.EOF_TYPE);
+        }catch(RuntimeException e){
+            success=false;
+        }
+        release();
+        return success;
+    }
+
+    public boolean speculate_stat_alt_2(){
+        System.out.println("attempt alternative 2");
+        boolean success=true;
+        mark();
+        try{
+            assign();
+            match(BacktrackLexer.EOF_TYPE);
+        }catch (RuntimeException e){
+            success=false;
+        }
+        release();
+        return success;
+    }
+    public void assign(){
+        list();
+        match(BacktrackLexer.EQUALS);
+        list();
+    }
     public void list(){
+        boolean failed=false;
+        int startTokenIndex=mark;
+        if(markers.size()>0&&alreadyParsedRule(listMemo))
+            return;
+        try{
+            _list();
+        }catch(RuntimeException e){
+            failed=true;
+            throw e;
+        }finally {
+            if(markers.size()>0)
+                memorize(listMemo,startTokenIndex,failed);
+        }
 
     }
 

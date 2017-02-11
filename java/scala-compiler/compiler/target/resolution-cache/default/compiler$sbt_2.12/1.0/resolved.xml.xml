@@ -4,7 +4,7 @@
 		module="compiler$sbt_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20170205203429"
+		publication="20170211232229"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>
