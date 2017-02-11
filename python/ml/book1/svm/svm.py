@@ -69,7 +69,20 @@ def smoSimple(dataMatiIn,classLabels,C,toler,maxIter):
                 alphaHold=alphas[j].copy()
                 if(labelMat[i]!=labelMat[j]):
                     L=max(0,alphas[j]-alphas[i])
-
+                    H=min(C,C+alphas[j]-alphas[i])
+                else:
+                    L=max(0,alphas[j]+alphas[i]-C)
+                    H=min(C,alphas[j]+alphas[i])
+                if L==H:
+                    print "L==H"
+                    continue
+                eta=2.0*dataMatrix[i,:]*dataMatrix[j,:]
+                if eta>=0:
+                    print "eta>=0"
+                    continue
+                alphas[j]-=labelMat[j]*(Ei-Ej)/eta
+                alphas[j]=clipAlpha(alphas[j],H,L)
+                if(abs(alphas[j]-alphajold))
 
 
 
