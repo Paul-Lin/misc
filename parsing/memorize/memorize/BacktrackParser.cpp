@@ -7,13 +7,14 @@ tina::BacktrackParser::BacktrackParser(tina::BacktrackLexer *lex) :lexer(lex) {
 }
 
 void tina::BacktrackParser::stat() {
-	if (speculate_stat_alt2()) {
-		assign();
-		match(BacktrackLexer::EOF_TYPE);
-	}
-	else if (speculate_stat_alt1()) {
+	if (speculate_stat_alt1()) {
 		list();
 		match(BacktrackLexer::EOF_TYPE);
+	}
+	else if (speculate_stat_alt2()) {
+		assign();
+		match(BacktrackLexer::EOF_TYPE);
+		std::cout << "speculate alt2 successful" << std::endl;
 	}
 	else {
 		std::cout << "no viable alt exception" << std::endl;
@@ -95,7 +96,7 @@ bool tina::BacktrackParser::list() {
 
 
 bool tina::BacktrackParser::_list() {
-	std::cout << "parse list rule at token index: " << std::endl;
+	std::cout << "parse list rule at token index: "<<marker<< std::endl;
 	return match(BacktrackLexer::LBRACK) && elements() && match(BacktrackLexer::RBRACK);
 }
 
@@ -165,7 +166,7 @@ bool tina::BacktrackParser::alreadyParsedRule(std::map<int, int>* memorization) 
 	if (memoi == NULL)return false;
 	std::cout << "parser list before at index "
 		<< marker
-		<< "; skip ahead to token index "
+		<< ";\n skip ahead to token index "
 		<< memoi << ": "
 		<< lookahead->at(memoi)->value
 		<< std::endl;
