@@ -7,7 +7,17 @@ tina::BacktrackParser::BacktrackParser(tina::BacktrackLexer *lex) :lexer(lex) {
 }
 
 void tina::BacktrackParser::stat() {
-
+	if (speculate_stat_alt2()) {
+		assign();
+		match(BacktrackLexer::EOF_TYPE);
+	}
+	else if (speculate_stat_alt1()) {
+		list();
+		match(BacktrackLexer::EOF_TYPE);
+	}
+	else {
+		std::cout << "no viable alt exception" << std::endl;
+	}
 }
 
 
@@ -44,6 +54,29 @@ int tina::BacktrackParser::type(int index) {
 	return token(index)->type;
 }
 
+bool tina::BacktrackParser::speculate_stat_alt1() {
+	std::cout << "attempt alternative 1" << std::endl;
+	bool success = true;
+	mark();
+	success &= list();
+	success &= match(BacktrackLexer::EOF_TYPE);
+	release();
+	return success;
+}
+
+bool tina::BacktrackParser::speculate_stat_alt2() {
+	std::cout << "attempt alternative 2" << std::endl;
+	bool success = true;
+	mark();
+	success &= assign();
+	success &= match(BacktrackLexer::EOF_TYPE);
+	release();
+	return success;
+}
+
+bool tina::BacktrackParser::assign() {
+	return list()&&match(BacktrackLexer::EQUALS)&&list();
+}
 /*
 	记录其解析结果
 */
@@ -51,12 +84,13 @@ bool tina::BacktrackParser::list() {
 	bool isSuccess = true;
 	int startTokenIndex = marker;
 	if (markers->size() > 0 && alreadyParsedRule(listMemo))
-		return;
+		isSuccess = true;
 	if(!_list()){
 		isSuccess = false;
 	}
 	if (markers->size() > 0)
 		memorize(listMemo, startTokenIndex, !isSuccess);
+	return isSuccess;
 }
 
 
@@ -76,7 +110,16 @@ bool tina::BacktrackParser::elements() {
 }
 
 bool tina::BacktrackParser::element() {
-	return false;
+	if (type(1) == BacktrackLexer::NAME&&type(2) == BacktrackLexer::EQUALS) {
+		return match(BacktrackLexer::NAME) && match(BacktrackLexer::EQUALS) && match(BacktrackLexer::NAME);
+	}
+	else if (type(1) == BacktrackLexer::NAME)
+		return match(BacktrackLexer::NAME);
+	else if (type(1) == BacktrackLexer::LBRACK)
+		return list();
+	else
+		return false;
+	
 }
 
 bool tina::BacktrackParser::match(int index) {
@@ -117,7 +160,8 @@ void tina::BacktrackParser::memorize(std::map<int, int>* memorization, int start
 	方法有副作用： 如果不用重新解析，则它会自动将缓冲区的下标向前移，以避免重新解析
 */
 bool tina::BacktrackParser::alreadyParsedRule(std::map<int, int>* memorization) {
-	int memoi = memorization->at(marker);
+	std::map<int, int> mmap = *memorization;
+	int memoi = mmap[marker];
 	if (memoi == NULL)return false;
 	std::cout << "parser list before at index "
 		<< marker

@@ -9,7 +9,7 @@ void tina::Token::toString() {
 void tina::BacktrackLexer::consume() {
 	p++;
 	if (p >= input.length()) ch = EOF;
-	ch = input.at(p);
+	else ch = input.at(p);
 }
 
 tina::Token* tina::BacktrackLexer::nextToken() {
