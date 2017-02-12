@@ -1,6 +1,5 @@
 package com.moon.proxy;
 
-import com.moon.annotation.Proxy;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
