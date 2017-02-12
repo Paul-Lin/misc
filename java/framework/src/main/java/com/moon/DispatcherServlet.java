@@ -1,10 +1,7 @@
 package com.moon;
 
 import com.moon.annotation.Controller;
-import com.moon.bean.Data;
-import com.moon.bean.Handler;
-import com.moon.bean.Param;
-import com.moon.bean.View;
+import com.moon.bean.*;
 import com.moon.helper.BeanHelper;
 import com.moon.helper.ControllerHelper;
 import com.moon.helper.HelperLoader;
@@ -23,9 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
-import java.util.Enumeration;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 
@@ -62,12 +57,13 @@ public class DispatcherServlet extends HttpServlet{
             Class<?> controllerClass=handler.getControllerClass();
             Object controllerBean= BeanHelper.getBean(controllerClass);
             // 创建请求参数对象
-            Map<String,Object> paramMap=new ConcurrentHashMap<>();
+            List<FormParam> formParam=new ArrayList<>();
             Enumeration<String> paramNames=req.getParameterNames();
             while(paramNames.hasMoreElements()){
                 String paramName=paramNames.nextElement();
                 String paramValue=req.getParameter(paramName);
-                paramMap.put(paramName,paramValue);
+                FormParam param=new FormParam(paramName,paramValue);
+                formParam.add(param);
             }
             String body= CodecUtil.decodeURL(StreamUtil.getString(req.getInputStream()));
             if(StringUtils.isNotBlank(body)){
@@ -77,14 +73,21 @@ public class DispatcherServlet extends HttpServlet{
                     if(ArrayUtils.isNotEmpty(array)&&array.length==2){
                         String paramName=array[0];
                         String paramValue=array[1];
-                        paramMap.put(paramName,paramValue);
+                        FormParam param=new FormParam(paramName,paramValue);
+                        formParam.add(param);
                     }
                 });
             }
-            Param param=new Param(paramMap);
+            Param param=new Param(formParam);
             // 调用Action方法
             Method actionMethod=handler.getActionMethod();
-            Object result= ReflectionUtil.invokeMethod(controllerBean,actionMethod,param);
+            Object result;
+            if(param.isEmpty()){
+                result=ReflectionUtil.invokeMethod(controllerBean,actionMethod);
+            }else{
+                result= ReflectionUtil.invokeMethod(controllerBean,actionMethod,param);
+            }
+
             // 处理Action方法返回值
             if(result instanceof View){
                 // 返回JSP页面

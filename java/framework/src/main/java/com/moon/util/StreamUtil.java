@@ -3,10 +3,7 @@ package com.moon.util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Objects;
 
 /**
@@ -33,5 +30,23 @@ public final class StreamUtil {
             throw new RuntimeException(e);
         }
         return buf.toString();
+    }
+
+    /**
+     * 将输入流复制到输出流
+     * @param inputStream
+     * @param outputStream
+     */
+    public static void copyStream(InputStream inputStream, OutputStream outputStream){
+        try(InputStream input=inputStream;OutputStream output=outputStream){
+            int length;
+            byte[] buffer=new byte[4*1024];
+            while((length=input.read(buffer,0,buffer.length))!=-1)
+                output.write(buffer,0,length);
+            output.flush();
+        } catch (IOException e) {
+            LOGGER.error("copy stream failure",e);
+            throw new RuntimeException(e);
+        }
     }
 }
