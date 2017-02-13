@@ -2,7 +2,11 @@ package com.moon.helper;
 
 import com.moon.bean.FormParam;
 import com.moon.bean.Param;
+import com.moon.util.CodecUtil;
+import com.moon.util.StreamUtil;
+import com.moon.util.StringUtil;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -33,10 +37,27 @@ public class RequestHelper {
                 if(fieldValues.length==1){
                     fieldValue=fieldValues[0];
                 }else{
-                    StringBuilder buf=new StringBuilder("");
-                    Stream.of(fieldValues).reduce((l,r)->l+)
+                    fieldValue=Stream.of(fieldValues).reduce((l,r)->l+ StringUtil.SEPARATOR+r).get();
                 }
             }
         }
+        return formParamList;
+    }
+
+    private static List<FormParam> parseInputStream(HttpServletRequest request)throws IOException{
+        List<FormParam> formParamList=new ArrayList<>();
+        String body= CodecUtil.decodeURL(StreamUtil.getString(request.getInputStream()));
+        if(StringUtils.isNotBlank(body)){
+            String[] kvs=StringUtils.split(body,"&");
+            Stream.of(kvs).forEach(kv->{
+                String[] array=StringUtils.split(kv,"=");
+                if(ArrayUtils.isNotEmpty(array)&&array.length==2){
+                    String fieldName=array[0];
+                    String fieldValue=array[1];
+                    formParamList.add(new FormParam(fieldName,fieldValue));
+                }
+            });
+        }
+        return formParamList;
     }
 }
