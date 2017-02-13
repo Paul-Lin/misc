@@ -8,7 +8,7 @@
 namespace tina {
 	class MemoryParser {
 	public:
-		MemoryParser(BacktrackLexer* input) :lexer(input) { sync(1); }
+		MemoryParser(BacktrackLexer* input);
 		
 		int type(int index);
 
@@ -38,9 +38,13 @@ namespace tina {
 
 		bool alreadyParsedRule();
 
+		void memorize(int startTokenIndex,bool failed);
+
 		bool elements();
 
 		bool element();
+
+		void consume();
 	private:
 		static const int FAILED = -1;
 		BacktrackLexer* lexer;
@@ -48,7 +52,7 @@ namespace tina {
 		std::vector<Token*>* lookahead;
 		std::vector<int>* markers;
 		std::map<int, int> *memory = new std::map<int, int>();
-		int marker;
+		int marker=0;
 		
 	};
 }

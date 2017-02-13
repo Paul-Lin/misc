@@ -1,5 +1,11 @@
 #include "MemoryParser.h"
 
+tina::MemoryParser::MemoryParser(BacktrackLexer* input) :lexer(input) { 
+	lookahead = new std::vector<Token*>();
+	markers = new std::vector<int>();
+	sync(1); 
+}
+
 void tina::MemoryParser::sync(int index) {
 	int t1 = marker + index - 1;
 	int t2 = lookahead->size() - 1;
@@ -16,7 +22,7 @@ void tina::MemoryParser::fill(int size) {
 }
 
 tina::Token* tina::MemoryParser::token(int index) {
-	sync(1);
+	sync(index);
 	return lookahead->at(marker + index - 1);
 }
 
@@ -25,7 +31,21 @@ int tina::MemoryParser::type(int index) {
 }
 
 bool tina::MemoryParser::match(int ty) {
-	return type(1) == ty;
+	if (type(1) == ty) {
+		consume();
+		return true;
+	}
+	return false;
+}
+
+void tina::MemoryParser::consume() {
+	marker++;
+	if (marker == lookahead->size() && !(markers->size() > 0)) {
+		marker = 0;
+		lookahead->clear();
+		markers->clear();
+	}
+	sync(1);
 }
 
 void tina::MemoryParser::stat() {
@@ -63,16 +83,27 @@ bool tina::MemoryParser::speculate_stat_alt2() {
 	bool success = true;
 	mark();
 	success=assign();
-	success &= match(BacktrackLexer::EOF_TYPE);
+	
 	release();
 	return success;
 }
 
 bool tina::MemoryParser::list() {
 	bool success = true;
-	if (markers->size() > 0&&alreadyParsedRule())return true;
-
+	int startTokenIndex = marker;
+	if (markers->size() > 0 && alreadyParsedRule()) {
+		std::cout << "已经解析过了，不再进行解析" << std::endl;
+		return true;
+	}
+	success = _list();
+	if (markers->size() > 0)
+		memorize(startTokenIndex, success);
 	return false;
+}
+
+void tina::MemoryParser::memorize(int startTokenIndex,bool failed) {
+	int stopTokenIndex = failed ? FAILED : marker;
+	memory->insert(std::make_pair(startTokenIndex, stopTokenIndex));
 }
 
 bool tina::MemoryParser::_list() {
@@ -80,11 +111,12 @@ bool tina::MemoryParser::_list() {
 }
 
 bool tina::MemoryParser::elements() {
-	element();
-	while (type(1)==BacktrackLexer::COMMA) {
-		match(BacktrackLexer::COMMA);
-		element();
+	bool success = true;
+	success&=element();
+	while (match(BacktrackLexer::COMMA)) {
+		success&=element();
 	}
+	return success;
 }
 
 bool tina::MemoryParser::element() {
@@ -97,8 +129,10 @@ bool tina::MemoryParser::element() {
 	else if (type(1) == BacktrackLexer::LBRACK) {
 		return list();
 	}
-	else
+	else {
 		return false;
+	}
+		
 }
 bool tina::MemoryParser::alreadyParsedRule() {
 	std::map<int, int> memorize = *memory;
@@ -115,8 +149,5 @@ bool tina::MemoryParser::alreadyParsedRule() {
 }
 
 bool tina::MemoryParser::assign() {
-	return list() && match(BacktrackLexer::EQUALS) && list()&&match(BacktrackLexer::EOF_TYPE);
-}
-bool tina::MemoryParser::_list() {
-	return false;
+	return list() && match(BacktrackLexer::EQUALS) && list();
 }

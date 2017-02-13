@@ -148,11 +148,13 @@
   <ItemGroup>
     <ClInclude Include="BacktrackLexer.h" />
     <ClInclude Include="BacktrackParser.h" />
+    <ClInclude Include="MemoryParser.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BacktrackLexer.cpp" />
     <ClCompile Include="BacktrackParser.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MemoryParser.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -43,7 +43,7 @@ void tina::BacktrackParser::fill(int index) {
 
 tina::Token* tina::BacktrackParser::token(int index) {
 	sync(index);
-	return lookahead->at(marker + index - index);
+	return lookahead->at(marker + index - 1);
 }
 
 void tina::BacktrackParser::release() {
