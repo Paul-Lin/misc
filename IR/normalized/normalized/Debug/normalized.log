@@ -1,0 +1,9 @@
+﻿  ast.cpp
+c:\users\paul\misc\ir\normalized\normalized\ast.cpp(27): warning C4018: “<”: 有符号/无符号不匹配
+  正在生成代码...
+  正在编译...
+  node.cpp
+  main.cpp
+  正在生成代码...
+  normalized.vcxproj -> C:\Users\Paul\misc\IR\normalized\Debug\normalized.exe
+  normalized.vcxproj -> C:\Users\Paul\misc\IR\normalized\Debug\normalized.pdb (Full PDB)
