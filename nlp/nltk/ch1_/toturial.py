@@ -127,6 +127,17 @@ def tag_news():
     from nltk.corpus import brown
     brown_news_tagged = brown.tagged_words(categories='news')
     tag_fd=nltk.FreqDist(tag for(word,tag) in brown_news_tagged)
-    print tag_fd.keys()
+    word_tag_pairs=nltk.bigrams(brown_news_tagged)
+    print list(nltk.FreqDist(a[1] for (a,b) in word_tag_pairs if b[1]=='NP'))
 
-tag_news()
+
+def find_tags(tag_prefix,tagged_text):
+    cfd=nltk.ConditionalFreqDist((tag,word) for (word,tag) in tagged_text if tag.startswith(tag_prefix))
+    return dict((tag,cfd[tag].keys()[:5]) for tag in cfd.conditions())
+
+def find_tags1(tag_prefix,tagged_text):
+    cfd=nltk.ConditionalFreqDist((tag,word) for (word,tag) in tagged_text if tag_prefix.startswith(tag_prefix))
+    return dict((tag,cfd[tag].keys()[:5]) for tag in cfd.conditions())
+tagdict=find_tags('NN',nltk.corpus.brown.tagged_words(categories='news'))
+for tag in sorted(tagdict):
+    print tag,tagdict[tag]
