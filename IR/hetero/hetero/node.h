@@ -18,9 +18,13 @@ namespace tina {
 		AddNode(ExprNode* l, Token* addToken, ExprNode* r);
 		std::string toStringTree();
 		void walk();
-	private:
 		ExprNode* left;
 		ExprNode* right;
 
+	};
+
+	class IndepentPostOrderPrintVisitor {
+	public:
+		void print(ExprNode* n);
 	};
 }

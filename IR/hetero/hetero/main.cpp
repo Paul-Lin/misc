@@ -9,5 +9,9 @@ int main() {
 
 
 	root->walk();
+
+	std::cout << "+++++++++++++++++++++++++++++++++" << std::endl;
+	tina::IndepentPostOrderPrintVisitor* vistor = new tina::IndepentPostOrderPrintVisitor();
+	vistor->print(root);
 	system("pause");
 }

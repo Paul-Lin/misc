@@ -34,3 +34,12 @@ void tina::AddNode::walk() {
 
 	std::cout << std::endl;
 }
+
+void tina::IndepentPostOrderPrintVisitor::print(ExprNode* node) {
+	if (node->type() == Token::PLUS) {
+		AddNode* addNode = (AddNode*)node;
+		std::cout << addNode->left->toString();
+		std::cout <<node->toString();
+		std::cout << addNode->right->toString() << std::endl;
+	}
+}

@@ -24,6 +24,8 @@ namespace tina {
 
 		virtual std::string toString();
 		virtual std::string toStringTree();
+
+		int type();
 	protected:
 		Token* token;
 	};

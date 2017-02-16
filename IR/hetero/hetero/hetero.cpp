@@ -11,3 +11,7 @@ std::string tina::HeteroAst::toString() {
 std::string tina::HeteroAst::toStringTree() {
 	return toString();
 }
+
+int tina::HeteroAst::type() {
+	return token->type;
+}
