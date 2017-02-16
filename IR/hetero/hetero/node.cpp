@@ -16,3 +16,21 @@ std::string tina::AddNode::toStringTree() {
 	str = str + ")";
 	return str;
 }
+
+void tina::ExprNode::walk() {
+	std::cout << token->toString() << std::endl;
+}
+
+void tina::IntNode::walk() {
+	std::cout << token->toString() <<" ";
+}
+
+void tina::AddNode::walk() {
+	left->walk();
+
+	right->walk();
+
+	std::cout << token->toString() << " ";
+
+	std::cout << std::endl;
+}

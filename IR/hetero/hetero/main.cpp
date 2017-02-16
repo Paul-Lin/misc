@@ -6,5 +6,8 @@ int main() {
 	tina::Token* two = new tina::Token(tina::Token::INT, "2");
 	tina::ExprNode* root = new tina::AddNode(new tina::IntNode(one), plus, new tina::IntNode(two));
 	std::cout << root->toStringTree() << std::endl;
+
+
+	root->walk();
 	system("pause");
 }
