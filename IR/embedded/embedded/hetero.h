@@ -6,10 +6,14 @@
 
 namespace tina {
 	struct Token {
+		const static int PLUS = 0;
+		const static int INT = 1;
+		const static int ID = 2;
+		const static int ASSIGN = 3;
 		int type;
 		std::string text;
 		Token(int t):type(t){}
-		Token(int t,std::string& str):type(t),text(str){}
+		Token(const int t,const std::string& str):type(t),text(str){}
 		std::string toString() { return text; }
 	};
 	class HeteroAst {
