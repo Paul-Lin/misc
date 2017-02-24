@@ -66,7 +66,7 @@ def smoSimple(dataMatiIn,classLabels,C,toler,maxIter):
                 fXj=float(multiply(alphas,labelMat).T*(dataMatrix*dataMatrix[j,:].T))+b
                 Ej=fXj-float(labelMat[j])
                 alphaIold=alphas[i].copy()
-                alphaHold=alphas[j].copy()
+                alphaJold=alphas[j].copy()
                 if(labelMat[i]!=labelMat[j]):
                     L=max(0,alphas[j]-alphas[i])
                     H=min(C,C+alphas[j]-alphas[i])
@@ -82,7 +82,19 @@ def smoSimple(dataMatiIn,classLabels,C,toler,maxIter):
                     continue
                 alphas[j]-=labelMat[j]*(Ei-Ej)/eta
                 alphas[j]=clipAlpha(alphas[j],H,L)
-                if(abs(alphas[j]-alphajold))
+                if(abs(alphas[j]-alphaJold)<0.0001):
+                    print "j not moving enough"
+                    continue
+                alphas[i]+=labelMat[j]*labelMat[i]*(alphaJold-alphas[j])
+                b1=b-Ei-labelMat[i]*(alphas[i]-alphaIold)*\
+                    dataMatrix[i,:]*dataMatrix[i,:].T-\
+                    labelMat[j]*(alphas[j]-alphaJold)*\
+                    dataMatrix[i,:]*dataMatrix[j,:].T
+                b2=b-Ej-labelMat[i]*(alphas[i]-alphaIold)*\
+                    dataMatrix[i,:]*dataMatrix[j,:].T-\
+                    labelMat[j]*(alphas[i]-alphaJold)*\
+
+
 
 
 
