@@ -5,7 +5,7 @@
 namespace tina {
 	class Type {
 	public:
-		virtual std::string getName() = 0;
+		virtual std::string getName()=0;
 		virtual std::string toString()=0;
 	};
 	class Symbol {
@@ -19,6 +19,13 @@ namespace tina {
 			if (type != nullptr)
 				return '<' + getName() + " : " + type->toString();
 		}
+	};
+	class VariableSymbol:public Symbol {
+	public:
+		VariableSymbol(std::string name,Type type):Symbol(name,type){}
+	};
+	class BuiltIntTypeSymbol :public Symbol, Type {
+
 	};
 }
 #endif
